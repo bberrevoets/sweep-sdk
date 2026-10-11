@@ -4,9 +4,9 @@ Examples for the `libsweep` library.
 
 This can be either the dummy library always returning static point cloud data or the device library requiring the Scanse Sweep device to be plugged in.
 
-### Quick Start
+## Quick Start
 
-#### Linux
+### Linux
 
 Requires `libsweep.so` be installed.
 
@@ -44,8 +44,7 @@ Then start some subscribers connecting to the publisher.
 ./example-net subscriber
 ```
 
-
-#### Windows
+### Windows
 
 First make sure that the installation directories for the library and includes have been added to the environment variable `PATH`.
 
@@ -58,7 +57,9 @@ cmake .. -G "Visual Studio 14 2015 Win64"
 cmake --build . --config Release
 ```
 
-**Note:** in the above command, `Visual Studio 14 2015 Win64` will build x64 (64bit) versions of the examples. This requires that the x64 verison of `libsweep` be installed. If you installed the x86 version, drop the `Win64`. See `libsweep/README` for more info.
+**Note:** in the above command, `Visual Studio 14 2015 Win64` will build x64 (64bit) versions of the examples. This
+requires that the x64 verison of `libsweep` be installed. If you installed the x86 version, drop the `Win64`. See
+`libsweep/README` for more info.
 
 If you do not know the COM port number of your device, check under Device Manager -> Ports (COM & LP).
 
@@ -69,7 +70,7 @@ example-c.exe COM5
 example-c++.exe COM5
 ```
 
-### License
+## License
 
 Copyright © 2016 Daniel J. Hofmann
 

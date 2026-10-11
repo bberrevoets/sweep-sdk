@@ -2,10 +2,9 @@
 
 Low-level Scanse Sweep LiDAR library. Comes as C99 library `sweep.h` with optional C++11 header `sweep.hpp` on top of it.
 
+## Quick Start
 
-
-### Quick Start
-#### Linux
+### Linux
 
 ```bash
 mkdir -p build
@@ -24,8 +23,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DDUMMY=On
 
 This dummy library is API and ABI compatible. Once your device arrives switch out the `libsweep.so` shared library and you're good to go.
 
-
-#### Windows
+### Windows
 
 For Windows users open a command prompt with administrative access:
 
@@ -39,14 +37,18 @@ cmake --build . --target install --config Release
 
 The above command assumes Visual Studio 2015. If you have a different version installed, change the value. ie:
 
-    Visual Studio 11 2012 Win64 = Generates Visual Studio 11 (VS 2012) project files for x64 architecture
-    Visual Studio 12 2013 Win64 = Generates Visual Studio 12 (VS 2013) project files for x64 architecture
-    Visual Studio 14 2015 Win64 = Generates Visual Studio 14 (VS 2015) project files for x64 architecture
-    Visual Studio 15 2017 Win64 = Generates Visual Studio 15 (VS 2017) project files for x64 architecture
+```text
+Visual Studio 11 2012 Win64 = Generates Visual Studio 11 (VS 2012) project files for x64 architecture
+Visual Studio 12 2013 Win64 = Generates Visual Studio 12 (VS 2013) project files for x64 architecture
+Visual Studio 14 2015 Win64 = Generates Visual Studio 14 (VS 2015) project files for x64 architecture
+Visual Studio 15 2017 Win64 = Generates Visual Studio 15 (VS 2017) project files for x64 architecture
+```
 
 Additionally, the above commands assume you want to build a x64 (64bit) verison of the library. To build a x86 (32 bit) version, simply drop the `Win64`. i.e.:
 
-    Visual Studio 14 2015 = Generates Visual Studio 14 (VS 2015) project files for x86 architecture
+```text
+Visual Studio 14 2015 = Generates Visual Studio 14 (VS 2015) project files for x86 architecture
+```
 
 To build the dummy library add the dummy flag to the command:
 
@@ -54,16 +56,21 @@ To build the dummy library add the dummy flag to the command:
 cmake ..  -DDUMMY=On -G "Visual Studio 14 2015 Win64"
 ```
 
-Then be sure to add the installation directories for the library and the header files to the environment `PATH` variable. For the above installation you'd have to add something like the following:
+Then be sure to add the installation directories for the library and the header files to the environment `PATH`
+variable. For the above installation you'd have to add something like the following:
+
 - `C:\Program Files\sweep\lib` for the library
 - `C:\Program Files\sweep\include`for the headers
 
 You may have to restart the computer before the changes take effect.
 
-Lastly, if you are on windows you will have to adjust the settings for the COM port you are using in order to communicate properly with the sweep sensor. Follow [this guide](https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows). Adjusting settings only has to be done once for a given COM port, and windows will remember the settings.
+Lastly, if you are on windows you will have to adjust the settings for the COM port you are using in order to
+communicate properly with the sweep sensor. Follow [this
+guide](https://web.archive.org/web/20171120172824/https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows)
+(archived copy; in short: USB Transfer Sizes 64 bytes for Receive and Transmit, latency timer 2 ms).
+Adjusting settings only has to be done once for a given COM port, and windows will remember the settings.
 
-
-#### FreeBSD
+### FreeBSD
 
 On FreeBSD, using `pkg(8)` is the easiest and fastest way to get libsweep on your machine:
 
@@ -85,8 +92,7 @@ sudo make config # Enable NO_DEVICE build option if you don't have the actual de
 sudo make install clean
 ```
 
-
-### Usage
+## Usage
 
 - Include `<sweep/sweep.h>` for the C interface or `<sweep/sweep.hpp>` for the C++ interface.
 - Link `libsweep.so` with `-lsweep`.
@@ -105,14 +111,15 @@ c++ -Weverything -std=c++11 -I/usr/local/include -L/usr/local/lib -lsweep exampl
 
 In addition, we provide CMake integration. In your `CMakeLists.txt`:
 
-    find_package(Sweep REQUIRED)
-    target_link_libraries(.. ${LIBSWEEP_LIBRARY})
-    target_include_directories(.. ${LIBSWEEP_INCLUDE_DIR})
+```cmake
+find_package(Sweep REQUIRED)
+target_link_libraries(.. ${LIBSWEEP_LIBRARY})
+target_include_directories(.. ${LIBSWEEP_INCLUDE_DIR})
+```
 
 See [example.c](examples/example.c) and [example.cc](examples/example.cc) for a C and C++ example, respectively.
 
-
-### libsweep
+## libsweep
 
 Before jumping into details, here are the library's main design ideas:
 
@@ -123,6 +130,7 @@ Before jumping into details, here are the library's main design ideas:
 - Fixed-size and signed integers for portability and runtime checking (think sanitizers).
 
 Table of Contents:
+
 - [Firmware Compatibility](#firmware-compatibility)
 - [Version and ABI Management](#version-and-abi-management)
 - [Error Handling](#error-handling)
@@ -130,18 +138,20 @@ Table of Contents:
 - [Full 360 Degree Scan](#full-360-degree-scan)
 - [Additional Information](#additional-information)
 
-#### Firmware Compatibility
+### Firmware Compatibility
+
 | libsweep | sweep firmware |
-| -------- | :------------: |
-| v1.2.0+   | v1.4           |
-| v1.1.1   | v1.2           |
-| v1.1.0   | v1.1           |
-| v0.x.x   | v1.0           |
+| --- | :---: |
+| v1.2.0+ | v1.4 |
+| v1.1.1 | v1.2 |
+| v1.1.0 | v1.1 |
+| v0.x.x | v1.0 |
 
-You can check the firmware version installed on your sweep device by using a serial terminal (see [manual](https://s3.amazonaws.com/scanse/Sweep_user_manual.pdf)) or more easily using the sweep visualizer (see [instructions](https://support.scanse.io/hc/en-us/articles/224557908-Upgrading-Firmware)).
+You can check the firmware version installed on your sweep device by using a serial terminal (see
+[manual](https://s3.amazonaws.com/scanse/Sweep_user_manual.pdf)) or more easily using the sweep visualizer (see
+[instructions](https://web.archive.org/web/20171120001117/https://support.scanse.io/hc/en-us/articles/224557908-Upgrading-Firmware), archived copy).
 
-
-#### Version And ABI Management
+### Version And ABI Management
 
 ```c++
 SWEEP_VERSION_MAJOR
@@ -175,8 +185,7 @@ bool sweep_is_abi_compatible(void)
 Returns true if the library is ABI compatible.
 This check is done by comparing the interface header with the installed library's version.
 
-
-#### Error Handling
+### Error Handling
 
 ```c++
 SWEEP_ASSERT
@@ -205,8 +214,7 @@ void sweep_error_destruct(sweep_error_s error)
 
 Destructs an `sweep_error_s` object.
 
-
-#### Device Interaction
+### Device Interaction
 
 ```c++
 sweep_device_s
@@ -245,7 +253,6 @@ Will block until the device is ready (calibration routine complete + motor speed
 Starts internal background thread to accumulate and queue up scans. Scans can then be retrieved using `sweep_device_get_scan`.
 In case of error a `sweep_error_s` will be written into `error`.
 
-
 ```c++
 void sweep_device_stop_scanning(sweep_device_s device, sweep_error_s* error)
 ```
@@ -258,7 +265,10 @@ In case of error a `sweep_error_s` will be written into `error`.
 bool sweep_device_get_motor_ready(sweep_device_s device, sweep_error_s* error)
 ```
 
-Returns `true` if the device is ready. A device is ready when the motor speed has stabilized to the current setting, and the calibration routine is complete. For visual reference, the blue LED on the device will blink unil the device is ready. This method is useful when the device is powered on, or when adjusting motor speed. If the device is NOT ready, it will respond to certain commands (`DS` or `MS`) with a status code indicating a failure to execute the command.
+Returns `true` if the device is ready. A device is ready when the motor speed has stabilized to the current setting, and
+the calibration routine is complete. For visual reference, the blue LED on the device will blink unil the device is
+ready. This method is useful when the device is powered on, or when adjusting motor speed. If the device is NOT ready,
+it will respond to certain commands (`DS` or `MS`) with a status code indicating a failure to execute the command.
 In case of error a `sweep_error_s` will be written into `error`.
 
 ```c++
@@ -277,7 +287,6 @@ Sets the `sweep_device_s`'s motor speed in Hz.
 Blocks until prior motor speed has stabilized.
 The device supports speeds of 0 Hz to 10 Hz, but be careful that the device is not set at 0Hz before calling `sweep_device_start_scanning`.
 In case of error a `sweep_error_s` will be written into `error`.
-
 
 ```c++
 int32_t sweep_device_get_sample_rate(sweep_device_s device, sweep_error_s* error)
@@ -302,8 +311,7 @@ void sweep_device_reset(sweep_device_s device, sweep_error_s* error)
 Resets the `sweep_device_s` hardware.
 In case of error a `sweep_error_s` will be written into `error`.
 
-
-#### Full 360 Degree Scan
+### Full 360 Degree Scan
 
 ```c++
 sweep_scan_s
@@ -318,7 +326,6 @@ sweep_scan_s sweep_device_get_scan(sweep_device_s device, sweep_error_s* error)
 Returns the ordered readings (1st to last) from a single scan.
 Retrieves the oldest scan from a queue of scans accumulated in a background thread. Blocks until a scan is available. To be used after calling `sweep_device_start_scanning`.
 In case of error a `sweep_error_s` will be written into `error`.
-
 
 ```c++
 void sweep_scan_destruct(sweep_scan_s scan)
@@ -350,12 +357,13 @@ int32_t sweep_scan_get_signal_strength(sweep_scan_s scan, int32_t sample)
 
 Returns the signal strength (0 low -- 255 high) for the `sample`th sample in the `sweep_scan_s`.
 
+### Additional Information
 
-#### Additional Information
-It is recommended that you read through the sweep [Theory of Operation](https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) and [Best Practices](https://support.scanse.io/hc/en-us/articles/115006055388-Best-Practices).
+It is recommended that you read through the sweep [Theory of
+Operation](https://web.archive.org/web/20171120005631/https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) (archived copy). Scanse's
+Best Practices article is offline and was not archived.
 
-
-### License
+## License
 
 Copyright © 2016 Daniel J. Hofmann
 
