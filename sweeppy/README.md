@@ -14,13 +14,15 @@ python3 setup.py install --user
 
 ## Example for testing
 
-In the following, replace `/dev/ttyUSB0` with your device's port name. This executes [`__main__.py`](sweeppy/__main__.py) (also works without the installation step).
+In the following, replace `/dev/ttyUSB0` with your device's port name. This executes
+[`__main__.py`](https://github.com/bberrevoets/sweep-sdk/blob/main/sweeppy/sweeppy/__main__.py) (also works without the
+installation step).
 
 ```bash
 python -m sweeppy /dev/ttyUSB0
 ```
 
-See [`app.py`](sweeppy/app.py) for the common use-case where you have to coordinate between scanning and your app's work:
+See [`app.py`](https://github.com/bberrevoets/sweep-sdk/blob/main/sweeppy/sweeppy/app.py) for the common use-case where you have to coordinate between scanning and your app's work:
 
 - we start a producer thread putting scans from the Sweep device into a shared queue (non-blocking)
 - we start a consumer thread pulling scans out of the shared queue and doing work on them (blocking)
@@ -54,7 +56,8 @@ with Sweep('/dev/ttyUSB0') as sweep:
 
 Note: `Sweep` objects need to be scoped using the `with` statement for resource management.
 
-See [sweeppy.py](sweeppy/__init__.py) for interface and [example](sweeppy/__main__.py) for example usage.
+See [sweeppy.py](https://github.com/bberrevoets/sweep-sdk/blob/main/sweeppy/sweeppy/__init__.py) for interface and
+[example](https://github.com/bberrevoets/sweep-sdk/blob/main/sweeppy/sweeppy/__main__.py) for example usage.
 
 ## Interface
 
@@ -85,7 +88,7 @@ class Sample:
     self.signal_strength -> int ([0:255])
 ```
 
-See the [libsweep README](../libsweep/README.md#device-interaction) for a description of how to use a related interface.
+See the [libsweep README](https://github.com/bberrevoets/sweep-sdk/blob/main/libsweep/README.md#device-interaction) for a description of how to use a related interface.
 
 Additionally, it is recommended that you read through the sweep [Theory of
 Operation](https://web.archive.org/web/20171120005631/https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) (archived copy). Scanse's

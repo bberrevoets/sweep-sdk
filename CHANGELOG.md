@@ -31,8 +31,10 @@ Author: *Bert Berrevoets*
 - All inherited Markdown files reformatted to pass markdownlint (headings, tables, line length, code fences), as a
   formatting-only change. The protocol spec's command sections now share one heading level.
 - `RELEASE.md` points to this repository's releases and matches the protected-`main` workflow.
-- Dead `support.scanse.io` links replaced by Wayback Machine copies (the Best Practices article has none); the SweepPy
-  README links the libsweep README in this repository instead of upstream's.
+- Dead `support.scanse.io` links replaced by Wayback Machine copies (the Best Practices article has none).
+- SweepPy README: links are absolute links to this repository, because `setup.py` also publishes the README as the
+  package's long description, where relative links break.
+- `RELEASE.md` and AGENTS.md: JSweep builds against the dummy library only with `-PlibsweepDummy=true`.
 
 ### Removed
 

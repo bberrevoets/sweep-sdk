@@ -36,9 +36,13 @@ sudo cmake --build . --target install && sudo ldconfig
   Python takes the outer `sweeppy/` folder for a namespace package and fails with `No module named sweeppy.__main__`.
   Either way the package loads the installed libsweep at import.
 - **SweepJs:** `npm install` in `sweepjs` (node-gyp build, `nan` ^2.2); `npm test` opens `/dev/ttyUSB0`.
-- **JSweep:** `./gradlew build` in `jsweep` (Gradle wrapper 3.5).
-- **Docker:** `docker build -t sweep . && docker run -e GRADLE_TASK=build sweep` builds the dummy libsweep and JSweep
-  in a manylinux1 (CentOS 5) image — *untested since 2019*; the base image is long out of support.
+- **JSweep:** `./gradlew build` in `jsweep` (Gradle wrapper 3.5), **Linux only**. Its `buildLibSweep` task
+  ([jsweep/libsweep-bundling.gradle](jsweep/libsweep-bundling.gradle)) deletes `libsweep/build`, configures it again
+  with `-DDUMMY=Off` and bundles `libsweep.so` into a `linux-x86-64` natives jar. Pass `-PlibsweepDummy=true` to build
+  against the dummy library, and expect any manual build in `libsweep/build` to be wiped.
+- **Docker:** `docker build -t sweep . && docker run -e GRADLE_TASK=build sweep` runs `docker/build.sh` in a
+  manylinux1 (CentOS 5) image: a dummy libsweep build, then `./gradlew build`, which rebuilds libsweep without
+  `DUMMY` (see JSweep). *Untested since 2019*; the base image is long out of support.
 - **Tests:** there are none, and there is no CI: the upstream Travis and AppVeyor setup was removed on 2026-10-11 (it
   only built against the dummy library). A real device is the only test ([RELEASE.md](RELEASE.md)).
 - **Markdown lint:** `npx markdownlint-cli2 "**/*.md"`.
