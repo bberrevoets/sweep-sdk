@@ -37,3 +37,5 @@ sample\_rate
 
     $ sweep-ctl /dev/ttyUSB0 set motor_speed 5
     5
+
+<!-- markdownlint-disable-file MD041 --> <!-- pandoc title block (%) must stay on line 1 -->
