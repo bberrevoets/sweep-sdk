@@ -66,8 +66,8 @@ You may have to restart the computer before the changes take effect.
 
 Lastly, if you are on windows you will have to adjust the settings for the COM port you are using in order to
 communicate properly with the sweep sensor. Follow [this
-guide](https://web.archive.org/web/20171120172824/https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows) (archived copy; in
-short: USB Transfer Sizes 64 bytes for Receive and Transmit, latency timer 2 ms).
+guide](https://web.archive.org/web/20171120172824/https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows)
+(archived copy; in short: USB Transfer Sizes 64 bytes for Receive and Transmit, latency timer 2 ms).
 Adjusting settings only has to be done once for a given COM port, and windows will remember the settings.
 
 ### FreeBSD
