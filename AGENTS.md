@@ -31,7 +31,10 @@ sudo cmake --build . --target install && sudo ldconfig
   form needs Visual Studio 2015; current generators take the platform through `-A`.
 - **Examples:** `libsweep/examples` is a separate CMake project (`find_package(Sweep)`); the viewer needs SFML, the
   network example protobuf + ZeroMQ.
-- **SweepPy:** `python -m sweeppy <port>` (also without installing); install with `pip install ./sweeppy`.
+- **SweepPy:** install with `pip install ./sweeppy`, then `python -m sweeppy <port>` works from any folder. Without
+  installing, run it from the package folder: `cd sweeppy && python -m sweeppy <port>` — from the repository root
+  Python takes the outer `sweeppy/` folder for a namespace package and fails with `No module named sweeppy.__main__`.
+  Either way the package loads the installed libsweep at import.
 - **SweepJs:** `npm install` in `sweepjs` (node-gyp build, `nan` ^2.2); `npm test` opens `/dev/ttyUSB0`.
 - **JSweep:** `./gradlew build` in `jsweep` (Gradle wrapper 3.5).
 - **Tests:** there are none. The old CI (Travis, AppVeyor — both dead) only built against the dummy library; a real
