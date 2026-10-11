@@ -35,6 +35,7 @@ Author: *Bert Berrevoets*
 - SweepPy README: links are absolute links to this repository, because `setup.py` also publishes the README as the
   package's long description, where relative links break.
 - `RELEASE.md` and AGENTS.md: JSweep builds against the dummy library only with `-PlibsweepDummy=true`.
+- AGENTS.md Cross-Repository: sweep-ros is Bert's own private repository now, cloned next to this one.
 
 ### Removed
 

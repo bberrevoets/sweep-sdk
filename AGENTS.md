@@ -91,13 +91,11 @@ RELEASE.md           release checklist (version numbers live in four files)
 
 ## Cross-Repository
 
-Related forks in Bert's account (both still under review on 2026-10-11):
-
-- [bberrevoets/sweep-ros](https://github.com/bberrevoets/sweep-ros) — ROS driver and node (fork of `scanse/sweep-ros`);
-  it needs libsweep from this repository installed. An older clone is in
-  `D:\OldDisk\rosworkspaces\catkin_ws\src\sweep-ros`.
+- [bberrevoets/sweep-ros](https://github.com/bberrevoets/sweep-ros) — the ROS 1 driver and node, which links against
+  libsweep from this repository (install it first). Bert's own private repository since 2026-10-11 (detached from
+  `scanse/sweep-ros`); cloned next to this one in `D:\Repos\HardwareProjects\Sweep\sweep-ros`.
 - [bberrevoets/l3xz_sweep_scanner](https://github.com/bberrevoets/l3xz_sweep_scanner) — another ROS driver for the
-  Sweep (fork of `107-systems/l3xz_sweep_scanner`).
+  Sweep (fork of `107-systems/l3xz_sweep_scanner`), still under review on 2026-10-11.
 
 <!-- repo-init:start -->
 ## Repository Info
