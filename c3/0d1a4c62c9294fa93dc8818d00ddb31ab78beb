@@ -1,0 +1,25 @@
+.github/CONTRIBUTING.md
+  s_c197af7db730fe::t_5872f84fa07937 1,3-6,8,10-14,16,18-24,26
+.github/ISSUE_TEMPLATE.md
+  s_c197af7db730fe::t_d7239f6f45c743 1-2,5-15,17,19,21,24-25
+.github/PULL_REQUEST_TEMPLATE.md
+  s_c197af7db730fe::t_fe9aa57d701935 1,3,5,7,9,11
+.github/.markdownlint.json
+  s_c197af7db730fe::t_b5630f1fe49ed2 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c30d1a4c62c9294fa93dc8818d00ddb31ab78beb",
+  "prompts": {},
+  "sessions": {
+    "s_c197af7db730fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2933f06a-eb76-4707-85cd-c139a3a30290",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
