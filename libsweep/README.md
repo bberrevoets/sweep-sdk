@@ -66,7 +66,8 @@ You may have to restart the computer before the changes take effect.
 
 Lastly, if you are on windows you will have to adjust the settings for the COM port you are using in order to
 communicate properly with the sweep sensor. Follow [this
-guide](https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows).
+guide](https://web.archive.org/web/20171120172824/https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows) (archived copy; in
+short: USB Transfer Sizes 64 bytes for Receive and Transmit, latency timer 2 ms).
 Adjusting settings only has to be done once for a given COM port, and windows will remember the settings.
 
 ### FreeBSD
@@ -148,7 +149,7 @@ Table of Contents:
 
 You can check the firmware version installed on your sweep device by using a serial terminal (see
 [manual](https://s3.amazonaws.com/scanse/Sweep_user_manual.pdf)) or more easily using the sweep visualizer (see
-[instructions](https://support.scanse.io/hc/en-us/articles/224557908-Upgrading-Firmware)).
+[instructions](https://web.archive.org/web/20171120001117/https://support.scanse.io/hc/en-us/articles/224557908-Upgrading-Firmware), archived copy).
 
 ### Version And ABI Management
 
@@ -359,8 +360,8 @@ Returns the signal strength (0 low -- 255 high) for the `sample`th sample in the
 ### Additional Information
 
 It is recommended that you read through the sweep [Theory of
-Operation](https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) and [Best
-Practices](https://support.scanse.io/hc/en-us/articles/115006055388-Best-Practices).
+Operation](https://web.archive.org/web/20171120005631/https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) (archived copy). Scanse's
+Best Practices article is offline and was not archived.
 
 ## License
 

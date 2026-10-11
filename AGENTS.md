@@ -37,8 +37,10 @@ sudo cmake --build . --target install && sudo ldconfig
   Either way the package loads the installed libsweep at import.
 - **SweepJs:** `npm install` in `sweepjs` (node-gyp build, `nan` ^2.2); `npm test` opens `/dev/ttyUSB0`.
 - **JSweep:** `./gradlew build` in `jsweep` (Gradle wrapper 3.5).
-- **Tests:** there are none. The old CI (Travis, AppVeyor — both dead) only built against the dummy library; a real
-  device is the only test ([RELEASE.md](RELEASE.md)).
+- **Docker:** `docker build -t sweep . && docker run -e GRADLE_TASK=build sweep` builds the dummy libsweep and JSweep
+  in a manylinux1 (CentOS 5) image — *untested since 2019*; the base image is long out of support.
+- **Tests:** there are none, and there is no CI: the upstream Travis and AppVeyor setup was removed on 2026-10-11 (it
+  only built against the dummy library). A real device is the only test ([RELEASE.md](RELEASE.md)).
 - **Markdown lint:** `npx markdownlint-cli2 "**/*.md"`.
 
 ## Repository Layout
@@ -53,8 +55,7 @@ sweepjs/             Node.js addon (binding.gyp, sweepjs.cc) and a websocket exa
 jsweep/              Java bindings (JNA), Gradle build that bundles the native library
 Dockerfile, docker/  manylinux1 image that builds libsweep (dummy) and jsweep
 .github/             contributing guide, issue and pull request templates
-.travis.yml, appveyor.yml   upstream CI, no longer running
-RELEASE.md           upstream release checklist (version numbers live in four files)
+RELEASE.md           release checklist (version numbers live in four files)
 ```
 
 ## Conventions
@@ -75,10 +76,11 @@ RELEASE.md           upstream release checklist (version numbers live in four fi
   without LFS.
 - **Windows serial ports:** Sweep needs non-default FTDI driver settings, once per COM port (Device Manager → port →
   Port Settings → Advanced): USB Transfer Sizes **64** bytes for Receive and Transmit, latency timer (BM Options)
-  **2** ms. Without them data does not arrive correctly. The Scanse guide linked in the READMEs is offline; an
-  [archived copy](https://web.archive.org/web/20171120172824/https://support.scanse.io/hc/en-us/articles/115000793208-Changing-the-USB-Adapter-Latency-Timer-and-Byte-Size-Setting-on-Windows)
-  remains.
-- **Dead links:** `support.scanse.io` and `community.scanse.io` no longer exist; use the Wayback Machine for them.
+  **2** ms. Without them data does not arrive correctly (Scanse's guide, archived copy linked in
+  [libsweep/README.md](libsweep/README.md)).
+- **Dead links:** `support.scanse.io` and `community.scanse.io` no longer exist. The READMEs link Wayback Machine
+  copies where one exists (the Best Practices article has none); the user manual on `s3.amazonaws.com/scanse` was
+  still online on 2026-10-11.
 - **Two lint exceptions, on purpose:** `.github/.markdownlint.json` extends the root config and only turns off MD041
   (an H1 would land in every issue and PR body), and `libsweep/man/sweep-ctl.md` disables MD041 in a comment at its
   end because pandoc needs the `%` title block on line 1 (`libsweep/man/build.sh` turns it into `sweep-ctl.1`).

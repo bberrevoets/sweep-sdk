@@ -28,8 +28,17 @@ Author: *Bert Berrevoets*
 - README: an Authors section that credits the upstream authors and names the maintainer.
 - `.github` contributing guide and issue / pull request templates rewritten for this repository (the Scanse issue
   tracker and forum they pointed to are gone).
-- All inherited Markdown files reformatted to pass markdownlint (headings, tables, line length, code fences); the
-  text is unchanged. The protocol spec's command sections now share one heading level.
+- All inherited Markdown files reformatted to pass markdownlint (headings, tables, line length, code fences), as a
+  formatting-only change. The protocol spec's command sections now share one heading level.
+- `RELEASE.md` points to this repository's releases and matches the protected-`main` workflow.
+- Dead `support.scanse.io` links replaced by Wayback Machine copies (the Best Practices article has none); the SweepPy
+  README links the libsweep README in this repository instead of upstream's.
+
+### Removed
+
+Author: *Bert Berrevoets*
+
+- Upstream CI that no longer runs: `.travis.yml`, `appveyor.yml`, the `travis/` scripts and the README badges.
 
 ## v1.3.0
 

@@ -85,11 +85,11 @@ class Sample:
     self.signal_strength -> int ([0:255])
 ```
 
-See the [libsweep README](https://github.com/scanse/sweep-sdk/tree/master/libsweep#device-interaction) for a description of how to use a related interface.
+See the [libsweep README](../libsweep/README.md#device-interaction) for a description of how to use a related interface.
 
 Additionally, it is recommended that you read through the sweep [Theory of
-Operation](https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) and [Best
-Practices](https://support.scanse.io/hc/en-us/articles/115006055388-Best-Practices).
+Operation](https://web.archive.org/web/20171120005631/https://support.scanse.io/hc/en-us/articles/115006333327-Theory-of-Operation) (archived copy). Scanse's
+Best Practices article is offline and was not archived.
 
 ## Interpret Sample
 
