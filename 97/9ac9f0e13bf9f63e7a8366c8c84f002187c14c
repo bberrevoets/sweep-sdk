@@ -1,0 +1,21 @@
+AGENTS.md
+  s_c197af7db730fe::t_9859e9536c03f5 94-96,98
+CHANGELOG.md
+  s_c197af7db730fe::t_a035484b08d953 38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "979ac9f0e13bf9f63e7a8366c8c84f002187c14c",
+  "prompts": {},
+  "sessions": {
+    "s_c197af7db730fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2933f06a-eb76-4707-85cd-c139a3a30290",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
