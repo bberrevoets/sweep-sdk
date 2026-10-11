@@ -1,0 +1,29 @@
+RELEASE.md
+  s_c197af7db730fe::t_22905371495f2f 3,5-10
+AGENTS.md
+  s_c197af7db730fe::t_3798a5a7c5ed95 79-83
+  s_c197af7db730fe::t_895f5739daf667 40-43
+  s_c197af7db730fe::t_68ca869df2c6e7 58
+CHANGELOG.md
+  s_c197af7db730fe::t_6127cf2d05fb2b 31-41
+libsweep/README.md
+  s_c197af7db730fe::t_28e6cd96a43137 69-70,152,363-364
+sweeppy/README.md
+  s_c197af7db730fe::t_0d8e1fae25e69e 88,91-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "19d29f2981856260f76b70f023a36e58fe61e181",
+  "prompts": {},
+  "sessions": {
+    "s_c197af7db730fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2933f06a-eb76-4707-85cd-c139a3a30290",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
