@@ -1,25 +1,26 @@
-<!---
-This form is intended mainly for bug reports and feature requests. 
-This is NOT the place to ask for general project help. If you need help, please use the community forum available [here](http://community.scanse.io/).
-This text is a "template". Feel free to delete irrelevant sections.
+<!--
+Bug report or feature request for bberrevoets/sweep-sdk. Delete the sections that do not apply.
 -->
 
-#### sweep firmware version
-<!-- What verison of the sweep firmware are you using? -->
+## Sweep firmware version
 
-#### libsweep version + affected bindings
-<!-- What version of the libsweep library are you using? -->
-<!-- Does this issue concern libsweep or a specific language binding? -->
+<!-- For example 1.4; the IV command reports it. -->
 
-#### operating system
-<!-- If relevant, list any operating systems you've tested on -->
+## libsweep version and binding
 
-#### Platform/Hardware Setup
-<!-- If relevant, list any details about your platform or hardware setup -->
+<!-- The libsweep version, and whether this concerns libsweep itself, SweepPy, SweepJs or JSweep. -->
 
-#### Description:
+## Operating system
+
+<!-- Name and version, if relevant. -->
+
+## Platform and hardware setup
+
+<!-- For example the computer or Raspberry Pi, the USB serial adapter and the power supply. -->
+
+## Description
+
 <!--
-Describe the bug or feature request in detail. 
-A code snippet, screenshot, and small-test help us understand.
-Explain what happened and what you expected to happen.
+What happened, and what you expected to happen.
+A small code snippet, test case or screenshot that reproduces it helps.
 -->
