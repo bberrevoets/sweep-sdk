@@ -115,7 +115,8 @@ RELEASE.md           release checklist (version numbers live in four files)
   (`gh pr create --assignee bberrevoets`). PRs are squash-merged. After a merge: switch to `main` and pull, then delete the
   local branch with `git branch -D <branch>` (`-d` refuses after a squash merge) once
   `gh pr view <branch> --json state,headRefOid` shows `MERGED` and the same commit as `git rev-parse <branch>`.
-- **"Update the documentation"** means `AGENTS.md`, all `README.md` files and `CHANGELOG.md`; then commit and push.
+- **"Update the documentation"** means `AGENTS.md`, the project's own `README.md` files (not vendored third-party ones)
+  and `CHANGELOG.md`; then commit and push.
 - [CHANGELOG.md](CHANGELOG.md) follows Keep a Changelog: the Attributors list at the top, and one `Author: *Name*`
   line under each section heading (`### Added`, `### Changed`, ...).
 - Markdown must pass `markdownlint-cli2 "**/*.md"` with [.markdownlint.json](.markdownlint.json) (180-character
