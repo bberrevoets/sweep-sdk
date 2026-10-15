@@ -36,6 +36,7 @@ Author: *Bert Berrevoets*
   package's long description, where relative links break.
 - `RELEASE.md` and AGENTS.md: JSweep builds against the dummy library only with `-PlibsweepDummy=true`.
 - AGENTS.md Cross-Repository: sweep-ros is Bert's own private repository now, cloned next to this one.
+- AGENTS.md repo-init block refreshed: "update the documentation" covers the project's own README files, not vendored third-party ones.
 
 ### Removed
 
