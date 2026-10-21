@@ -94,8 +94,11 @@ RELEASE.md           release checklist (version numbers live in four files)
 - [bberrevoets/sweep-ros](https://github.com/bberrevoets/sweep-ros) — the ROS 1 driver and node, which links against
   libsweep from this repository (install it first). Bert's own private repository since 2026-10-11 (detached from
   `scanse/sweep-ros`); cloned next to this one in `D:\Repos\HardwareProjects\Sweep\sweep-ros`.
-- [bberrevoets/l3xz_sweep_scanner](https://github.com/bberrevoets/l3xz_sweep_scanner) — another ROS driver for the
-  Sweep (fork of `107-systems/l3xz_sweep_scanner`), still under review on 2026-10-11.
+- [bberrevoets/l3xz_sweep_scanner](https://github.com/bberrevoets/l3xz_sweep_scanner) — the **ROS 2** (Humble,
+  colcon) driver for the Sweep, publishing `sensor_msgs/LaserScan`. It builds its own bundled copy of libsweep v1.3.0
+  (`external/libsweep/v1.3.0`, Unix serial backend only) instead of an installed one, so fixes here reach it only when
+  ported by hand. Bert's own private repository since 2026-10-22 (detached from the archived
+  `107-systems/l3xz_sweep_scanner`); cloned next to this one in `D:\Repos\HardwareProjects\Sweep\l3xz_sweep_scanner`.
 
 <!-- repo-init:start -->
 ## Repository Info
