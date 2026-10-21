@@ -39,6 +39,7 @@ Author: *Bert Berrevoets*
 - AGENTS.md repo-init block refreshed: "update the documentation" covers the project's own README files, not vendored third-party ones.
 - AGENTS.md Cross-Repository: l3xz_sweep_scanner is Bert's own private repository now, the ROS 2 driver with its own
   libsweep copy, cloned next to this one.
+- AGENTS.md overview: Bert owns a Sweep and ran it with ROS 2 in 2023 (replaces a guess).
 
 ### Removed
 

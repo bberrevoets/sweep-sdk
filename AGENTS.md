@@ -12,8 +12,8 @@ an optional C++11 header; SweepPy (Python, ctypes), SweepJs (Node.js native addo
 This is Bert's own repository, started as a fork of [scanse/sweep-sdk](https://github.com/scanse/sweep-sdk) and
 detached from that fork network on 2026-10-11 so he can develop it further. Upstream is **archived** (last commit
 2019-08-05: SDK v1.3.0, device firmware v1.4) and Scanse's support site and forum are gone; there is nothing to sync
-from. Up to the detach, the code is upstream's unchanged. *Guess, to confirm with Bert:* it belongs with his ROS
-experiments with a Sweep sensor (see Cross-Repository).
+from. Up to the detach, the code is upstream's unchanged. Bert owns a Sweep and ran it with ROS 2 in 2023 through
+l3xz_sweep_scanner, which builds its own copy of this libsweep (see Cross-Repository).
 
 ## Commands
 
